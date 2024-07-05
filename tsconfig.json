@@ -1,0 +1,22 @@
+{
+	"include": [".vitepress/**/*", ".vitepress/**/*.vue"],
+	"compilerOptions": {
+		// 为了使用 import.meta 和导入 ES模块 必须配置
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+
+		"target": "ESNext",
+		"lib": ["ESNext"],
+		"resolveJsonModule": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"esModuleInterop": true,
+		"skipDefaultLibCheck": true,
+		"skipLibCheck": true,
+
+		"paths": {
+			// 使用 TS 并且使用别名时必须配置否则报错
+			"@/*": ["./.vitepress/theme/*"]
+		}
+	}
+}

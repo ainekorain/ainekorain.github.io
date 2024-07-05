@@ -1,0 +1,28 @@
+{
+	"name": "ainekorain.github.io",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vitepress dev",
+		"build": "vitepress build",
+		"preview": "vitepress preview",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts, --fix --ignore-path .gitignore",
+		"format": "prettier --write .vitepress/theme/ .vitepress/config.ts src/"
+	},
+	"dependencies": {
+		"vue": "^3.4.31"
+	},
+	"devDependencies": {
+		"@rushstack/eslint-patch": "^1.10.3",
+		"@vue/eslint-config-prettier": "^9.0.0",
+		"@vue/eslint-config-typescript": "^13.0.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-vue": "^9.27.0",
+		"prettier": "^3.3.2",
+		"sass": "^1.77.6",
+		"unplugin-auto-import": "^0.17.6",
+		"unplugin-vue-components": "^0.27.2",
+		"vite-plugin-vue-devtools": "^7.3.5",
+		"vitepress": "^1.2.3"
+	}
+}
