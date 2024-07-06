@@ -7,6 +7,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ICarbonAccessibility: typeof import('~icons/carbon/accessibility')['default']
+    ICarbonLogoGithub: typeof import('~icons/carbon/logo-github')['default']
+    IMdiAccountBox: typeof import('~icons/mdi/account-box')['default']
     Test: typeof import('./../components/Test.vue')['default']
     VPFeature: typeof import('./../components/VPFeature.vue')['default']
     VPImage: typeof import('./../components/VPImage.vue')['default']

@@ -2,7 +2,8 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import './style.css'
+import './assets/css/index.scss'
+import 'uno.css'
 
 export default {
 	extends: DefaultTheme,

@@ -9,6 +9,12 @@ import AutoImport from 'unplugin-auto-import/vite'
 // 自动导入组件，无需手动导入
 import Components from 'unplugin-vue-components/vite'
 
+// 20万图标
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+
+import UnoCSS from 'unocss/vite'
+
 /**
  * 便捷转换 URL
  * @param path 相对路径
@@ -23,7 +29,7 @@ export default defineConfig({
 		plugins: [
 			vueDevTools(),
 			AutoImport({
-				imports: ['vue', 'vitepress'],
+				imports: ['vue', 'vitepress', '@vueuse/core'],
 				dts: transformToURL('../types/auto-imports.d.ts')
 			}),
 			Components({
@@ -33,8 +39,11 @@ export default defineConfig({
 				dts: fileURLToPath(
 					// @ts-ignore
 					new URL('../types/components.d.ts', import.meta.url)
-				)
-			})
+				),
+				resolvers: [IconsResolver()]
+			}),
+			Icons(),
+			UnoCSS()
 		],
 		resolve: {
 			alias: [

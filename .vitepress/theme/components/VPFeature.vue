@@ -40,11 +40,10 @@ defineProps<{
 				:width="icon.width || 48"
 			/>
 			<div v-else-if="icon" class="icon" v-html="icon"></div>
-			<h2 class="title" v-html="title"></h2>
-			<Test />
+			<h2 text-center class="title" v-html="title"></h2>
 			<p v-if="details" class="details" v-html="details"></p>
 
-			<div v-if="linkText" class="link-text">
+			<div flex justify-center v-if="linkText" class="link-text">
 				<p class="link-text-value">
 					{{ linkText }} <span class="vpi-arrow-right link-text-icon" />
 				</p>
@@ -54,8 +53,6 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-$red: #e46a61;
-
 .VPFeature {
 	display: block;
 	border: 1px solid var(--vp-c-bg-soft);
@@ -99,9 +96,6 @@ $red: #e46a61;
 	line-height: 24px;
 	font-size: 16px;
 	font-weight: 600;
-
-	// 新增
-	color: $red;
 }
 
 .details {
