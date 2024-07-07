@@ -29,13 +29,29 @@ export default defineConfig({
 		plugins: [
 			vueDevTools(),
 			AutoImport({
+				dirs: [],
+				// 依赖名或者正则
 				imports: ['vue', 'vitepress', '@vueuse/core'],
+				include: [
+					/\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+					/\.vue$/,
+					/\.vue\?vue/, // .vue
+					/\.md$/ // .md
+				],
 				dts: transformToURL('../types/auto-imports.d.ts')
 			}),
 			Components({
+				// 指定需要组件自动导入功能的目录
 				dirs: [transformToURL('../components'), transformToURL('../views')],
 				extensions: ['vue', 'md'],
-				include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+				include: [
+					/\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+					/\.vue$/,
+					/\.vue\?vue/, // .vue
+					/\.md$/ // .md
+				],
+
+				// 类型存放位置
 				dts: fileURLToPath(
 					// @ts-ignore
 					new URL('../types/components.d.ts', import.meta.url)

@@ -24,23 +24,25 @@ defineProps<{
 		:tag="link ? 'a' : 'div'"
 	>
 		<article class="box">
-			<div v-if="typeof icon === 'object' && icon.wrap" class="icon">
+			<div flex justify-center>
+				<div v-if="typeof icon === 'object' && icon.wrap" class="icon">
+					<VPImage
+						:image="icon"
+						:alt="icon.alt"
+						:height="icon.height || 48"
+						:width="icon.width || 48"
+					/>
+				</div>
 				<VPImage
+					v-else-if="typeof icon === 'object'"
 					:image="icon"
 					:alt="icon.alt"
 					:height="icon.height || 48"
 					:width="icon.width || 48"
 				/>
+				<div v-else-if="icon" class="icon" v-html="icon"></div>
 			</div>
-			<VPImage
-				v-else-if="typeof icon === 'object'"
-				:image="icon"
-				:alt="icon.alt"
-				:height="icon.height || 48"
-				:width="icon.width || 48"
-			/>
-			<div v-else-if="icon" class="icon" v-html="icon"></div>
-			<h2 text-center class="title" v-html="title"></h2>
+			<h2 text-center mt4 class="title" v-html="title"></h2>
 			<p v-if="details" class="details" v-html="details"></p>
 
 			<div flex justify-center v-if="linkText" class="link-text">

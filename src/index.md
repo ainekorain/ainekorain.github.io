@@ -1,9 +1,17 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: '所思所想，输出成长'
+  name: 黑客与画家
+  text: 给时间留下点什么
+  tagline: 所思所想，输出成长
+  actions:
+    - theme: brand
+      text: 开始学习
+      link: /example
+    - theme: alt
+      text: 关于我
+      link: https://github.com/vuejs/vitepress
 
 features:
   - icon:
